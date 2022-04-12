@@ -28,22 +28,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
   }
 });
 </script>
-<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
-// v0.0.1
-// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
-
-document.addEventListener('DOMContentLoaded', function() {
-  const codeList = document.getElementsByClassName("sourceCode");
-  for (var i = 0; i < codeList.length; i++) {
-    var linkList = codeList[i].getElementsByTagName('a');
-    for (var j = 0; j < linkList.length; j++) {
-      if (linkList[j].innerHTML === "") {
-        linkList[j].setAttribute('aria-hidden', 'true');
-      }
-    }
-  }
-});
-</script>
 <script>$(document).ready(function(){
     if (typeof $('[data-toggle="tooltip"]').tooltip === 'function') {
         $('[data-toggle="tooltip"]').tooltip();
@@ -53,13 +37,246 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+<style type="text/css">
+.lightable-minimal {
+border-collapse: separate;
+border-spacing: 16px 1px;
+width: 100%;
+margin-bottom: 10px;
+}
+.lightable-minimal td {
+margin-left: 5px;
+margin-right: 5px;
+}
+.lightable-minimal th {
+margin-left: 5px;
+margin-right: 5px;
+}
+.lightable-minimal thead tr:last-child th {
+border-bottom: 2px solid #00000050;
+empty-cells: hide;
+}
+.lightable-minimal tbody tr:first-child td {
+padding-top: 0.5em;
+}
+.lightable-minimal.lightable-hover tbody tr:hover {
+background-color: #f5f5f5;
+}
+.lightable-minimal.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-classic {
+border-top: 0.16em solid #111111;
+border-bottom: 0.16em solid #111111;
+width: 100%;
+margin-bottom: 10px;
+margin: 10px 5px;
+}
+.lightable-classic tfoot tr td {
+border: 0;
+}
+.lightable-classic tfoot tr:first-child td {
+border-top: 0.14em solid #111111;
+}
+.lightable-classic caption {
+color: #222222;
+}
+.lightable-classic td {
+padding-left: 5px;
+padding-right: 5px;
+color: #222222;
+}
+.lightable-classic th {
+padding-left: 5px;
+padding-right: 5px;
+font-weight: normal;
+color: #222222;
+}
+.lightable-classic thead tr:last-child th {
+border-bottom: 0.10em solid #111111;
+}
+.lightable-classic.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-classic.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-classic-2 {
+border-top: 3px double #111111;
+border-bottom: 3px double #111111;
+width: 100%;
+margin-bottom: 10px;
+}
+.lightable-classic-2 tfoot tr td {
+border: 0;
+}
+.lightable-classic-2 tfoot tr:first-child td {
+border-top: 3px double #111111;
+}
+.lightable-classic-2 caption {
+color: #222222;
+}
+.lightable-classic-2 td {
+padding-left: 5px;
+padding-right: 5px;
+color: #222222;
+}
+.lightable-classic-2 th {
+padding-left: 5px;
+padding-right: 5px;
+font-weight: normal;
+color: #222222;
+}
+.lightable-classic-2 tbody tr:last-child td {
+border-bottom: 3px double #111111;
+}
+.lightable-classic-2 thead tr:last-child th {
+border-bottom: 1px solid #111111;
+}
+.lightable-classic-2.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-classic-2.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-material {
+min-width: 100%;
+white-space: nowrap;
+table-layout: fixed;
+font-family: Roboto, sans-serif;
+border: 1px solid #EEE;
+border-collapse: collapse;
+margin-bottom: 10px;
+}
+.lightable-material tfoot tr td {
+border: 0;
+}
+.lightable-material tfoot tr:first-child td {
+border-top: 1px solid #EEE;
+}
+.lightable-material th {
+height: 56px;
+padding-left: 16px;
+padding-right: 16px;
+}
+.lightable-material td {
+height: 52px;
+padding-left: 16px;
+padding-right: 16px;
+border-top: 1px solid #eeeeee;
+}
+.lightable-material.lightable-hover tbody tr:hover {
+background-color: #f5f5f5;
+}
+.lightable-material.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-material.lightable-striped tbody td {
+border: 0;
+}
+.lightable-material.lightable-striped thead tr:last-child th {
+border-bottom: 1px solid #ddd;
+}
+.lightable-material-dark {
+min-width: 100%;
+white-space: nowrap;
+table-layout: fixed;
+font-family: Roboto, sans-serif;
+border: 1px solid #FFFFFF12;
+border-collapse: collapse;
+margin-bottom: 10px;
+background-color: #363640;
+}
+.lightable-material-dark tfoot tr td {
+border: 0;
+}
+.lightable-material-dark tfoot tr:first-child td {
+border-top: 1px solid #FFFFFF12;
+}
+.lightable-material-dark th {
+height: 56px;
+padding-left: 16px;
+padding-right: 16px;
+color: #FFFFFF60;
+}
+.lightable-material-dark td {
+height: 52px;
+padding-left: 16px;
+padding-right: 16px;
+color: #FFFFFF;
+border-top: 1px solid #FFFFFF12;
+}
+.lightable-material-dark.lightable-hover tbody tr:hover {
+background-color: #FFFFFF12;
+}
+.lightable-material-dark.lightable-striped tbody tr:nth-child(even) {
+background-color: #FFFFFF12;
+}
+.lightable-material-dark.lightable-striped tbody td {
+border: 0;
+}
+.lightable-material-dark.lightable-striped thead tr:last-child th {
+border-bottom: 1px solid #FFFFFF12;
+}
+.lightable-paper {
+width: 100%;
+margin-bottom: 10px;
+color: #444;
+}
+.lightable-paper tfoot tr td {
+border: 0;
+}
+.lightable-paper tfoot tr:first-child td {
+border-top: 1px solid #00000020;
+}
+.lightable-paper thead tr:last-child th {
+color: #666;
+vertical-align: bottom;
+border-bottom: 1px solid #00000020;
+line-height: 1.15em;
+padding: 10px 5px;
+}
+.lightable-paper td {
+vertical-align: middle;
+border-bottom: 1px solid #00000010;
+line-height: 1.15em;
+padding: 7px 5px;
+}
+.lightable-paper.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-paper.lightable-striped tbody tr:nth-child(even) {
+background-color: #00000008;
+}
+.lightable-paper.lightable-striped tbody td {
+border: 0;
+}
+</style>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 
-<style type="text/css">code{white-space: pre;}</style>
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -142,6 +359,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 })();
 </script>
+
 
 
 
@@ -337,23 +555,38 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 
-<h1 class="title toc-ignore">drhur: Learn R with Dr. Hu Easily and Happily</h1>
+<h1 class="title toc-ignore">drhur: Learn R with Dr. Hu Easily and
+Happily</h1>
 <h4 class="author">Yue Hu and Yufei Sun</h4>
 
 
 
 <div id="overview" class="section level2">
 <h2>Overview</h2>
-<p>Learning a programming language such as R is tough. <code>drhur</code> is a pedagogical software make the R learners’ life a little bit easier and more happily. The package includes (and is going to include more) tutorials of basic and advanced data science skills with R, such as data cleaning, analyzing, and visualization. The goal of the package is to provide an interactive platform for learners to enter the R world easily and efficiently.</p>
-<p>The package is built upon the <code>learnr</code> function which will open a shiny app for learners to interact with the instructions and tasks. The best way to learn these skills together with the “Learning R with Dr. Hu” online/offline workshops. One can get more information about the workshops through my website or contact me directly.</p>
+<p>Learning a programming language such as R is tough.
+<code>drhur</code> is a pedagogical software make the R learners’ life a
+little bit easier and more happily. The package includes (and is going
+to include more) tutorials of basic and advanced data science skills
+with R, such as data cleaning, analyzing, and visualization. The goal of
+the package is to provide an interactive platform for learners to enter
+the R world easily and efficiently.</p>
+<p>The package is built upon the <code>learnr</code> function which will
+open a shiny app for learners to interact with the instructions and
+tasks. The best way to learn these skills together with the “Learning R
+with Dr. Hu” online/offline workshops. One can get more information
+about the workshops through my website or contact me directly.</p>
 </div>
 <div id="usage" class="section level2">
 <h2>Usage</h2>
-<p>One can easily load the package and call the tutorials through the function <code>drhur()</code>. For instance, one can initiate the visualization tutorial with the following commands:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="cf">if</span> (<span class="op">!</span><span class="kw">require</span>(drhur)) <span class="kw">install.packages</span>(<span class="st">&quot;drhur&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">library</span>(drhur)</span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="kw">drhur</span>(<span class="st">&quot;visualization&quot;</span>)</span></code></pre></div>
+<p>One can easily load the package and call the tutorials through the
+function <code>drhur()</code>. For instance, one can initiate the
+visualization tutorial with the following commands:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(drhur)) <span class="fu">install.packages</span>(<span class="st">&quot;drhur&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(drhur)) remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;lidingruc/drhur/&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drhur)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">drhur</span>(<span class="st">&quot;visualizing&quot;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">drhur</span>(<span class="st">&quot;visualizing&quot;</span>, <span class="at">language =</span> <span class="st">&quot;cn&quot;</span>)</span></code></pre></div>
 <p>The current available tutorials include：</p>
 <table class="table" style="width: auto !important; ">
 <thead>
@@ -375,7 +608,8 @@ Usage
 <a href="#playing">playing</a>
 </td>
 <td style="text-align:left;width: 28em; ">
-<strong>Playing around with R:</strong> Intro to basic data structure in R; inputting, outputting, and creating data.
+<strong>Playing around with R:</strong> Intro to basic data structure in
+R; inputting, outputting, and creating data.
 </td>
 <td style="text-align:left;width: 28em; ">
 <code>drhur(&#39;playing&#39;)</code>
@@ -386,7 +620,9 @@ Usage
 <a href="#munging">munging</a>
 </td>
 <td style="text-align:left;width: 28em; ">
-<strong>Data munging: </strong> Generalizing (such as sorting and summarizing) and extracting (selecting or adjusting certain columns or rows) data frames.
+<strong>Data munging: </strong> Generalizing (such as sorting and
+summarizing) and extracting (selecting or adjusting certain columns or
+rows) data frames.
 </td>
 <td style="text-align:left;width: 28em; ">
 <code>drhur(&#39;munging&#39;)</code>
@@ -397,7 +633,8 @@ Usage
 <a href="#analyzing">analyzing</a>
 </td>
 <td style="text-align:left;width: 28em; ">
-<strong>Data analyzing:</strong> Analyze data with descriptive and multivariate tools and diagnoses.
+<strong>Data analyzing:</strong> Analyze data with descriptive and
+multivariate tools and diagnoses.
 </td>
 <td style="text-align:left;width: 28em; ">
 <code>drhur(&#39;analyzing&#39;)</code>
@@ -408,7 +645,8 @@ Usage
 <a href="#visualizing">visualizing</a>  
 </td>
 <td style="text-align:left;width: 28em; ">
-<strong>Data presenting:</strong> Present descriptive and analytic results with ‘ggplot2’
+<strong>Data presenting:</strong> Present descriptive and analytic
+results with ‘ggplot2’
 </td>
 <td style="text-align:left;width: 28em; ">
 <code>drhur(&#39;visualizing&#39;)</code>
@@ -419,8 +657,12 @@ Usage
 </div>
 <div id="conclusion" class="section level2">
 <h2>Conclusion</h2>
-<p><code>drhur</code> aims to help R learners to get in touch with the most common applied skills of the programming language. We encourage users to consult the help files for more details.</p>
-<p>The development of the package is ongoing. Please contact us with any questions, bug reports, and comments. Free to open an issue on <a href="https://github.com/sammo3182/drhur/issues">GitHub</a> if you have any question or a feature request.</p>
+<p><code>drhur</code> aims to help R learners to get in touch with the
+most common applied skills of the programming language. We encourage
+users to consult the help files for more details.</p>
+<p>The development of the package is ongoing. Please contact us with any
+questions, bug reports, and comments. Free to open an issue on <a href="https://github.com/sammo3182/drhur/issues">GitHub</a> if you have
+any question or a feature request.</p>
 </div>
 <div id="affiliation" class="section level2">
 <h2>Affiliation</h2>
