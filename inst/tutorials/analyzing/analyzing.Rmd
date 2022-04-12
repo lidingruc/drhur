@@ -112,7 +112,7 @@ print(dfSummary(gapminder,
 ```
 
 ```{r out.width = "100%", echo = FALSE}
-knitr::include_graphics("/images/dfSummary.png")
+knitr::include_graphics("../analyzing_cn/images/dfSummary.png")
 ```
 
 ## Analytic Statistics

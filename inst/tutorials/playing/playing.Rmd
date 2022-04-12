@@ -48,7 +48,7 @@ Naming rules
 why `<-` not `=`
 
 ```{r out.width = "60%", echo = FALSE}
-knitr::include_graphics("images/APLkeyBoard.png")
+knitr::include_graphics("../playing_cn/images/APLkeyBoard.png")
 ```
 
 ### You can, but...
@@ -118,7 +118,7 @@ df_html <- readHTMLTable(url, which=3)
 ## A Word of Function
 
 ```{r out.width = "60%", echo = FALSE}
-knitr::include_graphics("images/handShadow.gif")
+knitr::include_graphics("../playing_cn/images/handShadow.gif")
 ```
 
 ```{r funIllustration, eval = FALSE}
@@ -263,7 +263,7 @@ semester/months(1)
 ## Matrix = Multiple Vectors
 
 ```{r out.width = "60%", echo = FALSE}
-knitr::include_graphics("images/matrix.gif")
+knitr::include_graphics("../playing_cn/images/matrix.gif")
 ```
 
 Creating matrix in R
@@ -282,7 +282,7 @@ A[2, 3]
 In Excel:
 
 ```{r excel, out.width = "60%", echo = FALSE}
-knitr::include_graphics("images/excel-r1.png")
+knitr::include_graphics("../playing_cn/images/excel-r1.png")
 ```
 
 In R: 
@@ -298,7 +298,7 @@ df_toy
 In Rstudio:
 
 ```{r rstudio}
-knitr::include_graphics("images/excel-r2.png")
+knitr::include_graphics("../playing_cn/images/excel-r2.png")
 ```
 
 ## List and Array: Chains of Datas
@@ -335,7 +335,7 @@ gapminder
 ### Merging Rows
 
 ```{r out.width = "95%", echo = FALSE}
-knitr::include_graphics("images/rowBind.png")
+knitr::include_graphics("../playing_cn/images/rowBind.png")
 ```
 
 Q: Assuming we have two separate data for Asia and Europe (how?), how could we combine them into one?
@@ -356,7 +356,7 @@ gapminder_eurasia <- bind_rows(gapminder_asia, gapminder_europe)
 Q: I have several rows and just want to merge them together
 
 ```{r out.width = "95%", echo = FALSE}
-knitr::include_graphics("images/columnBind.png")
+knitr::include_graphics("../playing_cn/images/columnBind.png")
 ```
 
 ```{r ex_columnBind, exercise = TRUE}
@@ -373,7 +373,7 @@ bind_cols(gapminder_country, gapminder_year)
 Q: How can I use two datasets jointly?
 
 ```{r out.width = "95%", echo = FALSE}
-knitr::include_graphics("images/join.png")
+knitr::include_graphics("../playing_cn/images/join.png")
 ```
 
 ```{r ex_join, exercise = TRUE}

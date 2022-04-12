@@ -65,6 +65,7 @@ library(moments)
 ```{r toy}
 library(gapminder)
 gapminder
+getwd()
 ```
 
 
