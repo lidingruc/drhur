@@ -4,6 +4,7 @@ output:
   learnr::tutorial:
     progressive: true
     allow_skip: true
+    allow_duplicate_chunk_label: true
 runtime: shiny_prerendered
 ---
 
@@ -111,7 +112,7 @@ print(dfSummary(gapminder,
 ```
 
 ```{r out.width = "100%", echo = FALSE}
-knitr::include_graphics("images/dfSummary.png")
+knitr::include_graphics("/images/dfSummary.png")
 ```
 
 ## Analytic Statistics

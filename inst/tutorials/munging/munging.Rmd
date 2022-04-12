@@ -92,7 +92,7 @@ typeof(gapminder$gdpPercap)
 Welcome to the Tidyverse
 
 ```{r out.width = "100%", echo = FALSE}
-knitr::include_graphics("images/tidyverseHive.png")
+knitr::include_graphics("../munging_cn/images/tidyverseHive.png")
 ```
 
 Prevalent toolkit for data manipulation 
@@ -114,13 +114,13 @@ We focus on `dplyr` today.
 They do one thing, but they do it well.
 
 ```{r out.width = "95%", echo = FALSE}
-knitr::include_graphics("images/simple.png")
+knitr::include_graphics("../munging_cn/images/simple.png")
 ```
 
 ### Composability: Make Everything Different
 
 ```{r out.width = "95%", echo = FALSE}
-knitr::include_graphics("images/composable.png")
+knitr::include_graphics("../munging_cn/images/composable.png")
 ```
 
 Making codes more readable.
@@ -146,11 +146,11 @@ glimpse(gapminder)
 Q: Which countries have the largest populations? And the smallest?
 
 ```{r out.width = "95%", echo = FALSE}
-knitr::include_graphics("images/arrange.png")
+knitr::include_graphics("../munging_cn/images/arrange.png")
 ```
 
 ```{r out.width = "95%", echo = FALSE}
-knitr::include_graphics("images/desc.png")
+knitr::include_graphics("../munging_cn/images/desc.png")
 ```
 
 ```{r ex_arrange, exercise = TRUE}
@@ -188,7 +188,7 @@ What does `count()` give?
 Q: What was the average GDP per capita and median life expectancy?
 
 ```{r out.width = "95%", echo = FALSE}
-knitr::include_graphics("images/summarise.png")
+knitr::include_graphics("../munging_cn/images/summarise.png")
 ```
 
 
@@ -202,7 +202,7 @@ gapminder %>%
 Q: What was the average GDP per capita and median life expectancy *in each continent*?
 
 ```{r out.width = "95%", echo = FALSE}
-knitr::include_graphics("images/group_by.png")
+knitr::include_graphics("../munging_cn/images/group_by.png")
 ```
 
 
@@ -220,7 +220,7 @@ gapminder %>%
 Q: Which countries had the largest population in *2007*?
 
 ```{r out.width = "95%", echo = FALSE}
-knitr::include_graphics("images/filter.png")
+knitr::include_graphics("../munging_cn/images/filter.png")
 ```
 
 
@@ -246,7 +246,7 @@ Q: If I want
 3. Variables starting with "co"
 
 ```{r out.width = "95%", echo = FALSE}
-knitr::include_graphics("images/select.png")
+knitr::include_graphics("../munging_cn/images/select.png")
 ```
 
 ```{r ex_select, exercise = TRUE}
@@ -267,7 +267,7 @@ gapminder %>%
 Q: What's the life expectancy of the country that had the largest population in 2007---showing the country name, population, and life expectancy together, please?
 
 ```{r out.width = "95%", echo = FALSE}
-knitr::include_graphics("images/comboAttack.gif")
+knitr::include_graphics("../munging_cn/images/comboAttack.gif")
 ```
 
 ```{r ex_combo, exercise = TRUE}
@@ -286,7 +286,7 @@ gapminder %>%
 Q: What's the total GDP of each country?
 
 ```{r out.width = "95%", echo = FALSE}
-knitr::include_graphics("images/mutate.png")
+knitr::include_graphics("../munging_cn/images/mutate.png")
 ```
 
 ```{r ex_mutate, exercise = TRUE}
