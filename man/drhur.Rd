@@ -2,7 +2,9 @@
 % Please edit documentation in R/drhur.R
 \name{drhur}
 \alias{drhur}
-\title{Calling for an Exercise in Dr Hu's R Workshop}
+\title{Calling for an Exercise in Dr Hu's R Workshop
+drhur(workshop, language = "cn")
+The function calls a \code{\link[learnr]{run_tutorial}} function to open a \code{learnr} project. The project list is continually updated along with the R workshop with Dr. Hu. You can install the latest version through the following code: remotes::install_github("lidingruc/drhur/"). See the the \code{vignette(drhur)}}
 \usage{
 drhur(workshop, language = "cn")
 }
@@ -12,7 +14,9 @@ drhur(workshop, language = "cn")
 \item{language}{A character vector indicating the display language. The current version includes workshops in English (\code{en}) and simple Chinese (\code{cn}). The default is Chinese}
 }
 \description{
-The function calls a \code{\link[learnr]{run_tutorial}} function to open a \code{learnr} project. The project list is continually updated along with the R workshop with Dr. Hu.
+Calling for an Exercise in Dr Hu's R Workshop
+drhur(workshop, language = "cn")
+The function calls a \code{\link[learnr]{run_tutorial}} function to open a \code{learnr} project. The project list is continually updated along with the R workshop with Dr. Hu. You can install the latest version through the following code: remotes::install_github("lidingruc/drhur/"). See the the \code{vignette(drhur)}
 }
 \details{
 The list of workshop available for the current version:

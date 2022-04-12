@@ -11,6 +11,8 @@ To install:
 
 * the latest release version: `install.packages("drhur")`.
 + the latest version: `remotes::install_github("sammo3182/drhur")`.
+or 
+`remotes::install_github("liding/drhur")`.
 
 More details are available at here:
 
