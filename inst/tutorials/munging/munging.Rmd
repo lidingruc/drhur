@@ -323,7 +323,7 @@ gapminderNew <- gapminder %>% ...
 
 ## Bonus: Combining variables
 
-```{r df_coalesce, echo = TREU}
+```{r df_coalesce, echo = FALSE}
 df_toy <- data.frame(x = sample(c(1:2, NA, NA, NA)),
                      y = c(1, 2, NA, NA, 5),
                      z = c(NA, NA, 3, 4, 5))
@@ -332,6 +332,9 @@ df_toy <- data.frame(x = sample(c(1:2, NA, NA, NA)),
 Q: I want to fill the missing in the `x`, and combine `y` and `z` to one variable? 
 
 ```{r coalesce, exercise = TRUE}
+df_toy <- data.frame(x = sample(c(1:2, NA, NA, NA)),
+                     y = c(1, 2, NA, NA, 5),
+                     z = c(NA, NA, 3, 4, 5))
 df_toy %>% 
   mutate(x = coalesce(x, 0L),
          yz = coalesce(y, z))

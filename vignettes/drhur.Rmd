@@ -34,7 +34,7 @@ For instance, one can initiate the visualization tutorial with the following com
 
 ```{r eval = FALSE}
 if (!require(drhur)) install.packages("drhur")
-if (!require(drhur)) remotes::install_github("lidingruc/drhur/")
+if (!require(drhur)) remotes::install_github("lidingruc/drhur")
 
 library(drhur)
 drhur("visualizing")
