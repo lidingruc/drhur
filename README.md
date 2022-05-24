@@ -10,8 +10,8 @@ The tutorials included are crystallized during Dr. Hu's online and offline R wor
 To install:
 
 * the latest release version: `install.packages("drhur")`.
-+ the latest version: `remotes::install_github("sammo3182/drhur")`.
-or 
++ the latest version(with some error): `remotes::install_github("sammo3182/drhur")`.
+or with error corrected
 `remotes::install_github("liding/drhur")`.
 
 More details are available at here:
