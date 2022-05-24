@@ -12,7 +12,7 @@ To install:
 * the latest release version: `install.packages("drhur")`.
 + the latest version(with some error): `remotes::install_github("sammo3182/drhur")`.
 or with error corrected
-`remotes::install_github("liding/drhur")`.
+`remotes::install_github("lidingruc/drhur")`.
 
 More details are available at here:
 
