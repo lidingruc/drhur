@@ -267,6 +267,7 @@ vec_fac2
 `as.POSIXct` (numeric input), `as.POSIXlt` (character input)
 其中POSIXct是整数存储、POSIXlt是列表存储
 ```{r time, exercise = TRUE, exercise.eval = FALSE}
+library("lubridate")
 Sys.time() # 获取当前时间
 today()   # 获取当日的 年月日
 now()  # 获取当日的 年月日 时分秒  时区

@@ -176,8 +176,8 @@ cor.test(gapminder$lifeExp, gapminder$gdpPercap) #相关性检验
 相关性批量计算：如何知道年代、预期寿命、人均GDP和人口间的两两相关性。
 
 ```{r corrplot}
-select(gapminder, year, lifeExp, gdpPercap, pop) %>% 
-  cor %>% # 相关性分析
+dplyr::select(gapminder, year, lifeExp, gdpPercap, pop) %>% 
+  cor() %>% # 相关性分析
   corrplot::corrplot.mixed() # 相关性图
 ```
 
